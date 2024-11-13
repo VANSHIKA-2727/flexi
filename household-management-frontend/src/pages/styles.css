@@ -1,0 +1,2014 @@
+/* Overall container */
+.home-container {
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Hero section */
+.hero {
+  text-align: center;
+  background-color: #0d0d0d;
+  padding: 50px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: relative;
+  color: #76b900;
+}
+.hero::before {
+  content: "";
+  background: radial-gradient(circle, rgba(123, 194, 0, 0.25), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  z-index: 0;
+}
+h1 {
+  font-size: 3.5rem;
+  color: #76b900;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+/* Subheading */
+.greeting {
+  text-align: center;
+  margin-top: 20px;
+}
+h2 {
+  font-size: 2.5rem;
+  color: #76b900;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+/* Summary section */
+.summary-section {
+  display: block;
+ /* Change from flex to block */
+  margin-top: 20px;
+  gap: 20px;
+}
+/* Summary box */
+.summary-box {
+  background-color: #1e1e1e;
+  padding: 10px;
+  width: 50%;
+ /* Full width to stack */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
+ /* Add spacing between stacked cards */
+}
+.summary-box h3 {
+  font-size: 1.8rem;
+  color: #76b900;
+}
+.summary-box p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+/* Pie chart section */
+.pie-chart {
+  text-align: center;
+  margin-top: 40px;
+  width: 50%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border-radius: 50%;
+}
+.pie-chart h3 {
+  font-size: 2.5rem;
+  color: #76b900;
+  margin-bottom: 20px;
+}
+/* Button actions section */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.buttons-group button {
+  background-color: #76b900;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 12px;
+  margin: 0 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.buttons-group button:hover {
+  background-color: #5c9e00;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.clear-button {
+  background-color: #ff5733;
+}
+.clear-button:hover {
+  background-color: #e64a19;
+}
+/* Reminder section */
+.reminder-section {
+  margin-top: 50px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.reminder-section h3 {
+  font-size: 2.5rem;
+  color: #76b900;
+}
+.reminder-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.reminder-section li {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: #fff;
+}
+/* Gradient background for the body */
+body {
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(34, 34, 34, 1) 100%);
+  font-family: "Roboto", sans-serif;
+}
+/* Smooth fade-in animation for sections */
+.summary-section, .pie-chart, .actions, .reminder-section {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+ }
+}
+.pie-chart-section {
+  width: 60%;
+  margin: 20px auto;
+}
+.pie-chart-section canvas {
+  width: 100%;
+  height: auto;
+}
+/* Overall container for the carousel */
+.summary-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+/* Left and Right Arrows */
+.arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #76b900;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.arrow.left {
+  left: 0;
+}
+.arrow.right {
+  right: 0;
+}
+.arrow:hover {
+  color: #5c9e00;
+}
+/* Container for Summary Cards */
+.summary-cards-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+/* Individual Summary Cards */
+.summary-box {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 15px;
+  width: 50%;
+ /* Each card takes full width of the container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
+ /* Prevents cards from shrinking */
+}
+.summary-box h3 {
+  font-size: 1.8rem;
+  color: #76b900;
+}
+.summary-box p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.summary-cards-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+.summary-box {
+  flex-shrink: 0;
+  width: 40%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  height: 500px;
+  width: 500px;
+  border-radius: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+.summary-box.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.summary-box.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.carousel-arrow.left {
+  left: 10px;
+}
+.carousel-arrow.right {
+  right: 10px;
+}
+.summary-box {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.summary-box.visible {
+  opacity: 1;
+}
+.summary-box.hidden {
+  display: none;
+}
+.summary-card {
+  width: 300px;
+ /* Fixed width */
+  height: 300px;
+ /* Fixed height, ensuring square shape */
+  margin: 0 10px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ /* Vertically center content */
+  align-items: center;
+ /* Horizontally center content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0;
+ /* Prevent cards from shrinking */
+  vertical-align: middle;
+}
+.summary-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.summary-card p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.summary-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.card-wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.card-wrapper.show-cards {
+  transform: translateX(-100%);
+}
+.summary-card {
+  width: 300px;
+ /* Set a fixed width */
+  height: 300px;
+ /* Set the height equal to the width to make it square */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+.summary-card:hover {
+  transform: translateY(-10px);
+}
+.summary-card {
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.summary-card .card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ /* Align text to center */
+  vertical-align: middle;
+}
+/* Summary section */
+.summary-section {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 20px;
+}
+/* Pie chart section */
+.pie-chart {
+  width: 300px;
+  margin-left: auto;
+  position: relative;
+}
+/* styles.css */
+/* Make the summary section flex to allow layout adjustment */
+.summary-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+/* New container for cards and chart */
+.cards-and-chart-container {
+  display: flex;
+  gap: 10px;
+ /* Spacing between cards and chart */
+  width: 100%;
+ /* Full width for even spacing */
+}
+/* Flex style for sliding cards */
+.sliding-cards {
+  flex: 1;
+ /* Take available space for sliding cards */
+}
+/* Fixed width for the pie chart */
+.pie-chart {
+  flex: 0 0 300px;
+ /* Fixed width for pie chart */
+  max-width: 300px;
+ /* Ensure consistent chart sizing */
+}
+/* Shared class for both buttons */
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 10px;
+ /* Adjust as needed */
+  color: black;
+ /* Or your theme's preferred color */
+  font-size: 24px;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+/* Hover effect */
+.icon-button:hover {
+  transform: scale(1.1);
+  outline: none;
+}
+/* Specific styles for profile icon */
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+/* Overall container for Lists component */
+.lists-container {
+  font-family: "Roboto", sans-serif;
+  background-color: #1e1e1e;
+ /* Dark NVIDIA-inspired background */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+/* Header styling */
+.lists-container h2 {
+  font-size: 2rem;
+  color: #76b900;
+ /* NVIDIA green */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 15px;
+  text-align: center;
+}
+/* Tabs container styling */
+.lists-tabs {
+  display: flex;
+  justify-content: space-between;
+ /* Space buttons evenly */
+  gap: 10px;
+ /* Optional: adds spacing between buttons */
+  margin-bottom: 15px;
+}
+/* Individual tab button styling */
+.lists-tab {
+  flex: 1;
+ /* Ensures each button takes equal width */
+  background-color: #76b900;
+ /* Normal green color */
+  color: #1e1e1e;
+  border: 1px solid #76b900;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, filter 0.4s ease, transform 0.4s ease;
+ /* Consistent transition durations */
+  border-radius: 0 !important ;
+  text-align: center;
+ /* Centers text within the button */
+}
+/* Active tab styling */
+.lists-tab.active {
+  background-color: #76b900;
+  color: #ffffff;
+}
+/* Hover effect */
+.lists-tab:hover {
+  filter: brightness(1.2);
+ /* Lightens the button */
+  transform: scale(1.01);
+ /* Slightly enlarges the button */
+}
+/* Optional: Adding focus effect for better accessibility */
+.lists-tab:focus {
+  outline: none;
+ /* Remove default focus outline */
+  box-shadow: 0 0 4px #76b900;
+ /* Optional: subtle green glow effect */
+}
+/* Input fields styling */
+.lists-container input[type="text"], .lists-container input[type="number"] {
+  width: 50%;
+ /* Adjusts the width */
+  padding: 8px 12px;
+ /* Adjusted padding for slightly smaller size */
+  margin: 10px auto;
+ /* Centers the input box horizontally and adds spacing */
+  border: 1px solid #000000;
+ /* Matches theme color for the border */
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-radius: 0;
+ /* No rounded corners */
+  font-size: 1rem;
+  text-align: center;
+ /* Centers the text inside */
+  display: block;
+ /* Ensures centering works */
+}
+.lists-container input[type="text"]::placeholder, .lists-container input[type="number"]::placeholder {
+  color: #888;
+}
+/* Centering container for the Add button */
+.lists-container .button-container {
+  display: flex;
+  justify-content: center;
+}
+/* Add button styling */
+.lists-container button {
+  padding: 10px 20px;
+  background-color: #76b900;
+  color: #1e1e1e;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.lists-container button:hover {
+  background-color: #66a300;
+  color: white;
+  transform: scale(1.01);
+  filter: brightness(1.1);
+}
+/* List section header */
+.lists-container h4 {
+  margin-top: 20px;
+  color: #76b900;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+/* Container for the list styled as a table */
+.lists-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+/* Header row styling */
+.lists-container .list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #333;
+  border-bottom: 2px solid #76b900;
+}
+.lists-container .list-header span {
+  flex: 1;
+  text-align: center;
+}
+/* Table row styling */
+.lists-container li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: #76b900;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  transition: background-color 0.3s ease;
+  vertical-align: middle;
+}
+.lists-container li:nth-child(even) {
+  background-color: #333;
+}
+/* Column styling */
+.lists-container .item-name, .lists-container .item-quantity, .lists-container .item-action {
+  flex: 1;
+  text-align: center;
+}
+/* Button styling for the 'Delete' action */
+.lists-container .item-action button {
+  background-color: #76b900;
+  color: #1e1e1e;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  width: auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+.lists-container .item-action button:hover {
+  background-color: #8fd121;
+}
+/* Bill Tracker Page Styling (NVIDIA-inspired) */
+.bill-tracker {
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #e6e6e6;
+  max-width: 900px;
+ /* Increased width */
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ /* Center horizontally */
+  justify-content: flex-start;
+ /* Align content from the top */
+}
+.bill-tracker h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #76B900;
+}
+.bill-tracker input, .bill-tracker button {
+  width: 80%;
+ /* Set a specific width */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 0px;
+  border: 1px solid #333;
+  font-size: 1rem;
+  outline: none;
+  display: block;
+  text-align: center;
+}
+.bill-tracker input[type="text"], .bill-tracker input[type="number"], .bill-tracker input[type="date"] {
+  background-color: #2c2c2c;
+  color: #e6e6e6;
+}
+.bill-tracker button {
+  background-color: #76B900;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+ /* Increase padding for a more balanced button size */
+  font-size: 1rem;
+ /* Slightly increase font size */
+  border-radius: 0px;
+  width: auto;
+}
+.bill-tracker button:hover {
+  background-color: #5f9c00;
+}
+.bill-tracker h4 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  text-align: center;
+  color: #76B900;
+ /* NVIDIA green */
+}
+.bill-tracker ul {
+  list-style-type: none;
+  padding: 0;
+  width: 60%;
+ /* Center the list horizontally */
+  margin: 0 auto;
+}
+.bill-tracker li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 8px 0;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.bill-tracker li button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.bill-tracker li button:hover {
+  background-color: #e60000;
+}
+.bill-tracker button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+/* Flexbox for aligning the label and input */
+.bill-tracker .input-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.bill-tracker .label {
+  margin-right: 5px;
+ /* Reduce space between label and input */
+  font-size: 1rem;
+  color: #e6e6e6;
+ /* Light text color */
+}
+.bill-tracker input[type="date"] {
+  flex-grow: 1;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #2c2c2c;
+  color: #e6e6e6;
+  border: 1px solid #333;
+  border-radius: 0px;
+}
+.bill-tracker table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.bill-tracker th, .bill-tracker td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #444;
+}
+.bill-tracker th {
+  background-color: #333;
+ /* Dark background for headers */
+  color: #76B900;
+ /* NVIDIA green */
+}
+.bill-tracker td {
+  background-color: #2c2c2c;
+ /* Slightly lighter dark background */
+  color: #e6e6e6;
+ /* Light text */
+}
+.bill-tracker td button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.bill-tracker td button:hover {
+  background-color: #e60000;
+}
+/* Ensure that Due Date and Add Bill button are on the same line */
+.bill-tracker .form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ /* Vertically align */
+  margin-bottom: 20px;
+ /* Adjust margin if needed */
+}
+.bill-tracker .form-row input, .bill-tracker .form-row button {
+  width: auto;
+ /* Make sure the width adjusts to content */
+  margin-right: 10px;
+ /* Add space between input and button */
+}
+.bill-tracker .due-date-container {
+  display: flex;
+  align-items: center;
+ /* Ensure the label and input are on the same line */
+  margin-right: 10px;
+ /* Space between due date input and button */
+}
+.bill-tracker .due-date-label {
+  margin-right: 10px;
+ /* Space between label and input */
+}
+.bill-tracker .due-date-container input {
+  width: 150px;
+ /* Adjust input width */
+}
+.bill-tracker .add-bill-btn {
+  width: auto;
+ /* Adjust button width */
+  padding: 13.5px 70px;
+  background-color: #76B900;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.bill-tracker .add-bill-btn:hover {
+  background-color: #5f9c00;
+}
+/* Style for Edit and Delete buttons */
+.bill-tracker .bills-table button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 5px;
+  border-radius: 0;
+ /* No border-radius */
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.bill-tracker .bills-table button.edit-btn {
+  background-color: #76B900;
+ /* NVIDIA green for Edit button */
+  color: #fff;
+}
+.bill-tracker .bills-table button.delete-btn {
+  background-color: #76B900;
+ /* Red background for Delete button */
+  color: #fff;
+}
+.bill-tracker .bills-table button:hover {
+  opacity: 0.9;
+ /* Slight opacity change on hover */
+}
+.bill-tracker .bills-table button.edit-btn:hover {
+  background-color: #5f9c00;
+ /* Slightly darker green on hover */
+}
+.bill-tracker .bills-table button.delete-btn:hover {
+  background-color: #5f9c00;
+ /* Darker red on hover */
+}
+/* Subscription Manager Page Styling (NVIDIA-inspired) */
+.subscription-manager {
+  font-family: "Roboto", sans-serif;
+  background-color: #1e1e1e;
+ /* Dark background */
+  color: #e6e6e6;
+  padding: 20px;
+  max-width: 800px;
+ /* Centered and set max-width */
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.subscription-manager h3 {
+  font-size: 2rem;
+  color: #76B900;
+ /* NVIDIA green */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 15px;
+}
+/* Input fields styling */
+.subscription-manager input[type="text"], .subscription-manager input[type="number"], .subscription-manager input[type="date"] {
+  width: 50%;
+ /* Centering and width adjustment */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  background-color: #2c2c2c;
+  color: #e6e6e6;
+  border-radius: 0px;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  margin-right: 10px;
+}
+/* Add button styling */
+.subscription-manager button {
+  padding: 12px 20px;
+  background-color: #76B900;
+  color: #1e1e1e;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, filter 0.4s ease, transform 0.4s ease;
+  border-radius: 0px;
+  margin-top: 10px;
+}
+.subscription-manager button:hover {
+  background-color: #66a300;
+  color: white;
+  transform: scale(1.01);
+  filter: brightness(1.1);
+}
+/* Subscription Manager Table Styling */
+.subscription-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  color: #e6e6e6;
+  text-align: center;
+}
+.subscription-table thead {
+  background-color: #2c2c2c;
+}
+.subscription-table th, .subscription-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #333;
+  font-size: 1rem;
+}
+.subscription-table th {
+  font-size: 1rem;
+  color: #76B900;
+ /* NVIDIA green */
+}
+.subscription-table tbody tr {
+  background-color: #333;
+}
+.subscription-table tbody tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+.subscription-table tbody tr:hover {
+  background-color: #454545;
+}
+/* Edit and Delete buttons in the table */
+.subscription-table .button-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.subscription-table .button-container button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Edit button within table */
+.subscription-table .edit-btn {
+  background-color: #76B900;
+ /* NVIDIA green */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+ /* Adds space between the Edit and Delete buttons */
+}
+.subscription-table .edit-btn:hover {
+  background-color: #66a300;
+}
+/* Delete button within table */
+.subscription-table button.delete-btn {
+  background-color: #76B900;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.subscription-table button.delete-btn:hover {
+  background-color: #66a300;
+}
+/* Overall summary card container */
+#summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+ /* 3 cards per row */
+  gap: 30px;
+ /* Space between cards */
+  padding: 20px;
+  background-color: #1F1F1F;
+ /* Dark background for the page */
+  border-radius: 10px;
+}
+/* Individual card styling */
+.summary-card {
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+ /* Dark gradient background */
+  padding: 25px;
+ /* Increased padding inside cards */
+  border-radius: 0px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 15px;
+ /* Adds margin around each card for more space */
+}
+.summary-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+ /* More prominent shadow on hover */
+}
+/* Heading for each card */
+.summary-card h2 {
+  font-size: 1.6rem;
+  color: #76B900;
+ /* NVIDIA green */
+  font-family: 'Roboto', sans-serif;
+ /* Modern sans-serif font */
+  margin-bottom: 15px;
+}
+/* Styling for lists inside the cards */
+.summary-card ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #D5D5D5;
+ /* Light gray for text */
+}
+/* Styling for individual list items */
+.summary-card ul li {
+  margin: 12px 0;
+}
+/* Special styling for Meal Planner and Habit Tracker */
+.summary-card ul li span {
+  font-weight: bold;
+  color: #76B900;
+ /* Green color for meal types or frequency info */
+}
+/* Progress bar for Savings Goals */
+.summary-card .progress-bar {
+  background-color: #333333;
+ /* Darker background for progress bar */
+  border-radius: 0px;
+  height: 12px;
+  margin: 10px 0;
+}
+.summary-card .progress-bar div {
+  height: 100%;
+  border-radius: 0px;
+  background-color: #76B900;
+ /* NVIDIA green progress */
+}
+/* Card for Pantry Tracker with Expiry Information */
+.summary-card .pantry-info {
+  font-size: 1.2rem;
+  color: #FF9800;
+ /* Bright orange for expiry info */
+  margin-top: 10px;
+}
+/* Card for Lists, Bills, and Subscription sections */
+.summary-card ul li {
+  font-size: 1rem;
+  color: #D5D5D5;
+}
+.summary-card ul li span {
+  color: #888;
+ /* Gray for extra info */
+}
+/* Specific styling for lists (Lists, Bills, Subscriptions) */
+#lists li, #bills li, #subscriptions li {
+  font-size: 1rem;
+  color: #D5D5D5;
+}
+#lists li:before, #bills li:before, #subscriptions li:before {
+  content: "•";
+  color: #76B900;
+ /* Green bullet points */
+  padding-right: 8px;
+}
+/* Background for each section */
+.summary-card .section-background {
+  background-color: #1E1E1E;
+ /* Dark background for sections */
+  padding: 10px;
+  border-radius: 0px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+/* Black container for the summary section */
+.summary-container {
+  background-color: #1F1F1F;
+ /* Dark background */
+  padding: 30px;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+ /* Subtle shadow for depth */
+  margin: 30px auto;
+ /* Center the container */
+  max-width: 1200px;
+ /* Maximum width */
+  text-align: center;
+}
+/* Overall summary card container */
+#summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+ /* 3 cards per row */
+  gap: 30px;
+ /* Space between cards */
+}
+/* Individual card styling */
+.summary-card {
+  background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+ /* Dark gradient background */
+  padding: 25px;
+  border-radius: 0px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 15px;
+}
+.summary-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+/* Heading for each card */
+.summary-card h2 {
+  font-size: 1.6rem;
+  color: #76B900;
+ /* NVIDIA green */
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 15px;
+}
+/* Styling for lists inside the cards */
+.summary-card ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #D5D5D5;
+ /* Light gray for text */
+}
+.summary-card ul li {
+  margin: 12px 0;
+}
+/* Special styling for Meal Planner and Habit Tracker */
+.summary-card ul li span {
+  font-weight: bold;
+  color: #76B900;
+ /* NVIDIA green */
+}
+/* Title for the Monthly Summary Dashboard */
+.dashboard-title {
+  font-size: 2.5rem;
+  color: #76B900;
+ /* NVIDIA Green */
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-align: center;
+ /* Center align the text */
+  margin-bottom: 30px;
+ /* Adds space below the title */
+}
+/* Container and Headers */
+.savings-form, .savings-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1c1c1e;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+.savings-form h2, .savings-list h2 {
+  font-size: 1.8em;
+  color: #76b900;
+ /* NVIDIA green */
+  margin-bottom: 1em;
+  text-align: center;
+ /* Center the title */
+}
+.savings-form label {
+  font-size: 1.1em;
+  margin-top: 10px;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+}
+/* Add flexbox to the form for label and input */
+.savings-form .deadline-container {
+  display: flex;
+ /* Align items horizontally */
+  justify-content: space-between;
+ /* Space between the label and input */
+  align-items: center;
+ /* Align items vertically in the center */
+  margin-bottom: 15px;
+ /* Optional: Add some space between this row and the next */
+}
+.savings-form .deadline-container label {
+  margin-right: 10px;
+ /* Space between label and input */
+}
+.savings-form input {
+  width: 50%;
+  padding: 10px;
+  margin: 8px auto;
+  background-color: #2c2c2e;
+  border: 1px solid #444;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+}
+.savings-form button {
+  padding: 10px 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #76b900;
+ /* NVIDIA green */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 30%;
+  margin-top: 15px;
+  display: block;
+  margin: auto;
+}
+.savings-form button:hover {
+  background-color: #5e8f00;
+}
+/* Savings Goal Table Styles */
+.savings-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.savings-list th, .savings-list td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #444;
+}
+.savings-list th {
+  background-color: #76b900;
+ /* NVIDIA green for headers */
+  color: #ffffff;
+ /* White text for header */
+  font-size: 1.2em;
+}
+.savings-list td {
+  background-color: #2c2c2e;
+  color: #ffffff;
+}
+.savings-list button {
+  padding: 5px 12px;
+  font-size: 0.9em;
+  color: #ffffff;
+  background-color: #76b900;
+ /* Edit button color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+  border-radius: 0px;
+}
+.savings-list button:hover {
+  background-color: #76b900;
+}
+.savings-list button.delete-btn {
+  background-color: #76b900;
+ /* Delete button color */
+}
+.savings-list button.delete-btn:hover {
+  background-color: #76b900;
+}
+/* Optional: Styling for table rows on hover */
+.savings-list tr:hover {
+  background-color: #3a3a3a;
+}
+/* Success message styles */
+.success-message {
+  margin-top: 15px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .savings-form, .savings-list {
+      padding: 15px;
+ }
+  .savings-form button {
+      width: 100%;
+ }
+  .savings-list table {
+      width: 100%;
+ }
+  .savings-list td, .savings-list th {
+      font-size: 0.9em;
+      padding: 10px;
+ }
+  .savings-list td button {
+      width: 100%;
+      margin-top: 10px;
+ }
+}
+
+
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: #eaeaea;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #141414;
+  color: #76b900;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #76b900;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Main Content */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem; /* Added spacing between form and list containers */
+}
+
+/* Habit Form Section */
+.habit-form, .habit-list {
+  background-color: #222;
+  padding: 1.5rem;
+  width: 45%;
+  box-shadow: none; /* Removed green shadow */
+}
+
+.habit-form h2, .habit-list h2 {
+  color: #76b900;
+  border-bottom: 2px solid #76b900;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.habit-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.habit-form input {
+  width: 95%; /* Decreased width for a narrower input box */
+  max-width: 600px; /* Set a max width to control input width on larger screens */
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #eaeaea;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Prevent color change after input (keeping background dark) */
+.habit-form input:focus {
+  background-color: #333;
+  color: #eaeaea;
+  outline: none;
+  text-align: center;
+}
+
+.habit-form input::placeholder {
+  color: #777;
+  text-align: center;
+}
+
+.habit-form button {
+  background-color: #76b900;
+  color: #000;
+  border: none;
+  padding: 0.7rem 8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.habit-form button:hover {
+  background-color: #5f8f00;
+}
+
+/* Habit List Section */
+.habit-list {
+  background-color: #222;
+  padding: 1.5rem;
+  border-radius: 0px;
+  margin-top: 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+.habit-list h2 {
+  font-size: 1.5rem;
+  color: #76b900;  /* Using the NVIDIA green for the heading */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #222;  /* Ensure the table background matches the container */
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+table th {
+  background-color: #333;
+  color: #ffffff;  /* Using NVIDIA green for table headers */
+}
+
+table td {
+  background-color: #2a2a2a; /* Slightly lighter than the container for individual cells */
+  color: #eaeaea;
+}
+
+table td button {
+  background-color: #76b900;  /* Red background for delete button */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0px;
+}
+
+table td button:hover {
+  background-color: #619a00;  /* Darker red for hover effect */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem; /* Adjust spacing for smaller screens */
+  }
+  
+  .habit-form, .habit-list {
+      width: 100%;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th, table td {
+    padding: 10px;
+  }
+}
+
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: #eaeaea;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #141414;
+  color: #76b900;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #76b900;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Main Content */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Meal Form Section */
+.meal-form, .weekly-overview {
+  background-color: #222;
+  padding: 1.5rem;
+  width: 70%;
+  box-shadow: none;
+}
+
+.meal-form h2, .weekly-overview h2 {
+  color: #76b900;
+  border-bottom: 2px solid #76b900;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.meal-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Set uniform width for all input fields and dropdowns */
+.meal-form input, .meal-form select {
+  width: 95%; /* Ensures uniform width across all fields */
+  max-width: 600px; /* Controls input width on larger screens */
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #eaeaea;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.meal-form button {
+  background-color: #76b900;
+  color: #000;
+  border: none;
+  padding: 0.7rem 8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.meal-form button:hover {
+  background-color: #5f8f00;
+}
+
+/* Weekly Overview Section */
+.weekly-overview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem; /* Add spacing above the table */
+}
+
+.weekly-overview th, .weekly-overview td {
+  padding: 1rem;
+  text-align: left; /* Align text to the left for better readability */
+  border: 1px solid #444;
+}
+
+.weekly-overview th {
+  background-color: #333; /* Dark background for header */
+  color: #76b900; /* Use the NVIDIA green for the header text */
+  font-weight: bold;
+}
+
+.weekly-overview td {
+  background-color: #2a2a2a; /* Dark background for table rows */
+  color: #eaeaea; /* Light text color */
+  display: flex; /* Use flexbox to align content */
+  flex-wrap: wrap; /* Allow items to wrap within the cell */
+  justify-content: space-between; /* Space between the text and buttons */
+  align-items: center; /* Vertically center content */
+}
+
+.weekly-overview td .meal-details {
+  flex-grow: 1; /* Allow meal details to take up available space */
+  margin-right: 1rem; /* Add some space between meal details and buttons */
+}
+
+.weekly-overview td .buttons {
+  display: flex; /* Flexbox for the buttons */
+  gap: 1rem; /* Space between buttons */
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.weekly-overview td button {
+  background-color: #76b900;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.weekly-overview td button:hover {
+  background-color: #5f8f00;
+}
+
+.weekly-overview tr:hover td {
+  background-color: #3a3a3a; /* Highlight on hover */
+}
+
+/* Optional: Add zebra-striping effect for rows */
+.weekly-overview tr:nth-child(even) td {
+  background-color: #333; /* Dark background for even rows */
+}
+
+.weekly-overview tr:nth-child(odd) td {
+  background-color: #2a2a2a; /* Slightly lighter background for odd rows */
+}
+
+/* Export/Print Button */
+.export-button {
+  background-color: #76b900;
+  color: #000;
+  padding: 0.7rem 2rem;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  display: block;
+  margin: 2rem auto;
+}
+
+.export-button:hover {
+  background-color: #5f8f00;
+}
+
+/* Print Layout Adjustments */
+/* Hide elements during print (e.g., form inputs, buttons, etc.) */
+@media print {
+  body * {
+      visibility: hidden;
+  }
+
+  .meal-list, .meal-list * {
+      visibility: visible;
+  }
+
+  .meal-list {
+      position: absolute;
+      left: 0;
+      top: 0;
+  }
+
+  /* Hide buttons and text specifically from print */
+  .export-button {
+      display: none !important;
+  }
+
+  header {
+      display: none;
+  }
+  
+  /* Center the Weekly Meal Plan title on the printed page */
+  .meal-list h2 {
+      text-align: center;
+      font-size: 2rem;
+  }
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .meal-form, .weekly-overview {
+    width: 100%;
+  }
+}
+
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: #eaeaea;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #141414;
+  color: #76b900;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #76b900;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav a {
+  color: #76b900;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+/* Main Content */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Budget Form Section */
+.budget-form {
+  background-color: #222;
+  padding: 1.5rem;
+  width: 70%;
+  box-shadow: none;
+  margin-bottom: 2rem;
+}
+
+.budget-form h2 {
+  color: #76b900;
+  border-bottom: 2px solid #76b900;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.budget-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.budget-form input {
+  width: 97%;
+  max-width: 900px;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #eaeaea;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.budget-form button {
+  background-color: #76b900;
+  color: #000;
+  border: none;
+  padding: 0.7rem 3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.budget-form button:hover {
+  background-color: #5f8f00;
+}
+
+/* Budget List Section */
+.budget-list {
+  background-color: #222;
+  width: 70%;
+  box-shadow: none;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.budget-list h2 {
+  color: #76b900;
+  border-bottom: 2px solid #76b900;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.budget-list-box {
+  list-style-type: none;
+  padding: 0;
+}
+
+.budget-item {
+  background-color: #333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.budget-item strong {
+  font-size: 1.2rem;
+  color: #76b900;
+}
+
+.budget-amount {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  margin-right: 1rem;
+}
+
+.budget-actions button {
+  background-color: #76b900;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.budget-actions button:hover {
+  background-color: #5f8f00;
+}
+
+.delete-button {
+  background-color: #76b900;
+}
+
+.delete-button:hover {
+  background-color: #5f8f00;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .budget-form, .budget-list {
+    width: 100%;
+  }
+}
+
+/* Budget Table Styling */
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.budget-table th,
+.budget-table td {
+  padding: 1rem;
+  text-align: center; /* Align text to the center */
+  border: 1px solid #444;
+}
+
+.budget-table th {
+  background-color: #333;
+  color: #76b900;
+  font-weight: bold;
+}
+
+.budget-table td {
+  background-color: #2a2a2a;
+  color: #eaeaea;
+}
+
+/* Align buttons and content within cells */
+.budget-actions {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 1rem; /* Space between buttons */
+  align-items: center; /* Vertically center buttons */
+}
+
+/* Style the action buttons */
+.action-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  background-color: #76b900;
+  color: #000;
+  border: none;
+}
+
+.action-button:hover {
+  background-color: #5f8f00;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Highlight row on hover */
+.budget-table tr:hover td {
+  background-color: #3a3a3a;
+}
+
+/* Optional: Add zebra-striping effect for rows */
+.budget-table tr:nth-child(even) td {
+  background-color: #333;
+}
+
+.budget-table tr:nth-child(odd) td {
+  background-color: #2a2a2a;
+}
+
+/* Style the Day Added column */
+.budget-table td:nth-child(3) {
+  font-style: italic;
+  color: #a1a1a1; /* Lighter color for the date column */
+}
+
+/* Expense Tracker Styling */
+#expenseTracker {
+  width: 100%;
+  max-width: 600px; /* Maximum width */
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Center align all text */
+}
+
+#expenseTracker form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+#expenseTracker label {
+  font-size: 1.1rem;
+  color: #eaeaea;
+  text-align: center; /* Center label text */
+}
+
+#expenseTracker input,
+#expenseTracker select,
+#expenseTracker textarea {
+  width: 70%; /* Reduced width to 80% */
+  max-width: 400px; /* Maximum width for input fields */
+  padding: 0.75rem;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #eaeaea;
+  font-size: 1rem;
+  border-radius: 0; /* Remove rounded borders */
+  text-align: center; /* Center align input text */
+  margin: 0 auto; /* Center the inputs */
+}
+
+#expenseTracker button {
+  padding: 0.75rem 1.5rem;
+  background-color: #76b900;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#expenseTracker button:hover {
+  background-color: #5e9b00;
+}
+
+#expenseTracker .error-message {
+  color: #333; /* Changed from red to gray */
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center; /* Center align error text */
+}
+
+/* Expense List Table */
+#expenseTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+#expenseTable th,
+#expenseTable td {
+  padding: 1rem;
+  text-align: center; /* Center align table text */
+  border: 1px solid #444;
+}
+
+#expenseTable th {
+  background-color: #333;
+  color: #76b900;
+  font-weight: bold;
+}
+
+#expenseTable td {
+  background-color: #2a2a2a;
+  color: #eaeaea;
+}
+
+#expenseTable tr:hover td {
+  background-color: #3a3a3a;
+}
+
+/* Button styling for filters */
+#expenseTracker button {
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: #eaeaea;
+  border: 1px solid #76b900;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+#expenseTracker button:hover {
+  background-color: #76b900;
+  color: #fff;
+}

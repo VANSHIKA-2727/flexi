@@ -1,0 +1,696 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #bc4040;
+	padding: 10px 20px;
+	position: relative;
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-logo img {
+	width: 50px;
+	height: auto;
+}
+
+.navbar-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.profile-button,
+.hamburger-button,
+.features-button {
+	background: none;
+	border: none;
+	font-size: 24px;
+	color: black;
+	cursor: pointer;
+	padding: 10px;
+	transition: transform 0.2s ease;
+	position: relative;
+}
+
+.profile-button:hover,
+.hamburger-button:hover,
+.features-button:hover,
+.profile-button:focus,
+.hamburger-button:focus,
+.features-button:focus {
+	transform: scale(1.1);
+	outline: none;
+}
+
+.hamburger {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 20px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	right: 20px;
+	font-size: 30px;
+	color: black;
+	transition: transform 0.2s ease;
+}
+
+.hamburger:focus,
+.hamburger:active,
+.hamburger:hover {
+	outline: none;
+	background: transparent !important;
+	box-shadow: none !important;
+	transform: scale(1.2);
+}
+
+.hamburger div {
+	height: 4px;
+	width: 100%;
+	background-color: black;
+	transition: transform 0.2s ease;
+}
+
+.navList {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.navItem {
+	padding: 15px;
+}
+
+.navItem .link {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	display: block;
+}
+
+.navItem .link:hover {
+	background-color: #555;
+}
+
+.navItem .active {
+	font-weight: bold;
+}
+
+.features-dropdown,
+.profile-dropdown {
+	position: absolute;
+	background-color: #333;
+	border-radius: 5px;
+	padding: 10px;
+	display: none;
+	min-width: 200px;
+	z-index: 1000;
+}
+
+.features-button:focus+.features-dropdown,
+.features-button:active+.features-dropdown,
+.features-button:hover+.features-dropdown,
+.profile-button:focus+.profile-dropdown,
+.profile-button:active+.profile-dropdown,
+.profile-button:hover+.profile-dropdown {
+	display: block;
+}
+
+.features-dropdown ul,
+.profile-dropdown ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.features-dropdown ul li,
+.profile-dropdown ul li {
+	margin: 5px 0;
+}
+
+.features-dropdown ul li a,
+.profile-dropdown ul li a,
+.features-dropdown ul li button,
+.profile-dropdown ul li button {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 5px 10px;
+	border: none;
+	background: none;
+}
+
+.features-dropdown ul li a:hover,
+.profile-dropdown ul li a:hover,
+.features-dropdown ul li button:hover,
+.profile-dropdown ul li button:hover {
+	background-color: #444;
+}
+
+.profile-dropdown {
+	position: absolute;
+	top: 40px;
+	right: 0;
+	background-color: #333;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 10px 0;
+}
+
+.dropdown-item {
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+}
+
+.dropdown-item:hover {
+	background-color: #555;
+}
+
+@media (max-width: 768px) {
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.navbar-right {
+		display: none;
+	}
+
+	.hamburger-menu-profile {
+		display: block;
+	}
+
+	.profile-dropdown {
+		width: 100%;
+	}
+}
+
+body {
+	overflow-x: hidden;
+}
+
+body.dark-mode {
+	background-color: #121212;
+	color: #e0e0e0;
+}
+
+body.dark-mode nav,
+body.dark-mode .navbar,
+body.dark-mode .dropdown-menu,
+body.dark-mode .profile-dropdown,
+body.dark-mode .navbar-logo,
+body.dark-mode .link {
+	background-color: #333;
+	color: #fff;
+}
+
+body.dark-mode .navItem {
+	background-color: #333;
+}
+
+body.dark-mode .dropdown-item {
+	background-color: #444;
+	color: #fff;
+}
+
+body.dark-mode .content-section {
+	background-color: #1e1e1e;
+	color: #fff;
+}
+
+body.dark-mode .button,
+body.dark-mode .profile-button,
+body.dark-mode .hamburger {
+	background-color: #555;
+	color: #fff;
+}
+
+body.dark-mode .button:hover,
+body.dark-mode .profile-button:hover,
+body.dark-mode .hamburger:hover {
+	background-color: #777;
+}
+
+body.dark-mode .active {
+	border-bottom: 2px solid #ff5722;
+}
+
+.hamburger-menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.hamburger {
+	font-size: 30px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	color: black;
+	margin-left: auto;
+}
+
+.hamburger-dropdown {
+	display: flex;
+	flex-direction: column;
+	background-color: #333;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 10px 0;
+	width: 200px;
+}
+
+.profile-button {
+	color: black;
+	padding: 10px 20px;
+	border: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.profile-button:hover {
+	background-color: #555;
+}
+
+.profile-button:focus {
+	outline: none;
+}
+
+.features-dropdown,
+.profile-dropdown {
+	position: absolute;
+	background-color: #333;
+	border-radius: 5px;
+	padding: 10px;
+	display: none;
+	min-width: 200px;
+	z-index: 1000;
+}
+
+.features-button:focus+.features-dropdown,
+.features-button:active+.features-dropdown,
+.profile-button:focus+.profile-dropdown,
+.profile-button:active+.profile-dropdown {
+	display: block;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-logo img {
+	height: 40px;
+}
+
+.features-button {
+	margin-left: 20px;
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.features-dropdown {
+	position: absolute;
+	top: 60px;
+	left: 0;
+	background-color: #333;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	width: 200px;
+	display: none;
+}
+
+.features-button:hover+.features-dropdown,
+.features-dropdown:hover {
+	display: block;
+}
+
+.hamburger {
+	display: none;
+}
+
+.navbar-right {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-right button {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.navbar-left {
+		flex-grow: 1;
+	}
+
+	.features-button {
+		margin-left: 0;
+	}
+
+	.hamburger {
+		display: block;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #ffffff;
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-logo img {
+	height: 50px;
+}
+
+.features-button {
+	margin-left: 20px;
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.hamburger {
+	display: none;
+	flex-direction: column;
+	gap: 4px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.hamburger div {
+	width: 30px;
+	height: 4px;
+	background-color: #fff;
+}
+
+.navbar-right {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-right button {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.features-dropdown {
+	position: absolute;
+	top: 60px;
+	left: 0;
+	background-color: #272626;
+	padding: 10px;
+	width: 200px;
+	display: none;
+}
+
+.features-button:hover+.features-dropdown,
+.features-dropdown:hover {
+	display: block;
+}
+
+@media (max-width: 768px) {
+	.navbar-left {
+		flex-grow: 1;
+		justify-content: space-between;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.dropdown-menu {
+		display: none;
+	}
+
+	.menu-open .dropdown-menu {
+		display: block;
+	}
+}
+
+.profile-section {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.profile-button {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.navbar-right {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.profile-icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.features-button {
+	background-color: transparent;
+	color: gray;
+	padding: 5px 20px;
+	font-size: 20px;
+	cursor: pointer;
+	border: none;
+}
+
+.features-button:hover {
+	color: black;
+}
+
+.features-button:focus {
+	color: black;
+	outline: none;
+}
+
+/* Make sure profile dropdown is positioned correctly and clickable */
+.profile-dropdown {
+	position: absolute;
+	top: 40px;
+	/* Adjust based on your layout */
+	right: 0;
+	background-color: #333;
+	/* Dark background */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	z-index: 1000;
+	/* Ensure it is above other elements */
+	display: none;
+	/* Initially hidden */
+}
+
+.profile-section:hover .profile-dropdown {
+	display: block;
+}
+
+.dropdown-item {
+	color: #fff;
+	/* Text color for the items */
+	padding: 8px 15px;
+	text-decoration: none;
+	display: block;
+	border-bottom: 1px solid #444;
+	/* Border between items */
+}
+
+.dropdown-item:hover {
+	background-color: #555;
+	/* Highlight on hover */
+}
+
+/* Profile button and icon */
+.profile-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.profile-icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+/* Ensure no overlap with other content */
+.navbar-right {
+	position: relative;
+}
+
+/* Ensuring proper layout for mobile and desktop */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    display: none;
+  }
+
+  .menu-open .dropdown-menu {
+    display: block;
+  }
+
+  .profile-dropdown {
+    width: 100%;
+  }
+
+  .navbar-left {
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .features-dropdown {
+    width: 100%;
+  }
+}
+
+/* Styles for dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode nav,
+body.dark-mode .navbar,
+body.dark-mode .dropdown-menu,
+body.dark-mode .profile-dropdown,
+body.dark-mode .navbar-logo,
+body.dark-mode .link {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .dropdown-item {
+  background-color: #444;
+}
+
+body.dark-mode .profile-button,
+body.dark-mode .hamburger {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Transition effects for smooth theme change */
+body, .navbar, .dropdown-menu, .profile-dropdown {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dropdown hover state for better UX */
+.features-dropdown,
+.profile-dropdown {
+  position: absolute;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 200px;
+  display: none;
+  z-index: 1000;
+}
+
+.features-button:hover + .features-dropdown,
+.features-dropdown:hover {
+  display: block;
+}
+
+.profile-button:hover + .profile-dropdown,
+.profile-dropdown:hover {
+  display: block;
+}
+
+/* Specific class for active states in dropdown items */
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: #555;
+}
+
+.custom-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.custom-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  vertical-align: middle;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-icon:hover,
+.custom-icon:focus {
+  transform: scale(1.1);
+}
+
+.profile-button:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+

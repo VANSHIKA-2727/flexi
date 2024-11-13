@@ -1,0 +1,71 @@
+/* LoginPage.css */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #121212, #1E1E1E);
+  color: #E5E5E5;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background-color: rgba(32, 32, 32, 0.9); /* Transparent effect for background */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.login-box h2 {
+  font-size: 2em;
+  color: #76B900; /* NVIDIA green for title */
+  margin-bottom: 20px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2A2A2A;
+  color: #E5E5E5;
+  font-size: 1em;
+  outline: none;
+}
+
+.login-box input::placeholder {
+  color: #A0A0A0;
+}
+
+.login-button {
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #121212;
+  background-color: #76B900; /* NVIDIA green */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #5B8D00; /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}

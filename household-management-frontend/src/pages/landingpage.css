@@ -1,0 +1,63 @@
+/* LandingPage.css */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #121212, #1E1E1E); /* Subtle gradient for depth */
+  color: #E5E5E5;
+}
+
+.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  max-width: 700px;
+  padding: 50px;
+  background-color: rgba(32, 32, 32, 0.95); /* Slightly transparent for modern look */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.header h1 {
+  font-size: 2.8em;
+  color: #76B900; /* NVIDIA green for title */
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 1.2em;
+  color: #C0C0C0;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 14px 35px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #76B900;
+  background-color: transparent;
+  border: 2px solid #76B900;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, transform 0.25s, box-shadow 0.25s;
+}
+
+.cta-button:hover {
+  background-color: #76B900;
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(118, 185, 0, 0.5); /* Hover shadow effect */
+}
